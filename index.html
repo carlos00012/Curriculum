@@ -40,19 +40,25 @@
                 </form>
                 <p>Soy estudiante de Quinto semestre en Sistemas de Información</p>
                 <a href="https://carlos00012.github.io/curriculum_mejora/" target="_blank" class="btn btn-light mt-3">Anterior Versión</a>
+                
+
             </div>
             
             <!-- Información de la Universidad -->
             <div class="col-md-6 bg-primary text-white p-4 mb-3 rounded">
                 <h3>Universidad Técnica de Cotopaxi</h3>
                 <img src="https://catalogo.utc.edu.ec/opac-tmpl/bootstrap/custom_utc_images/cabecera2.png" alt="UTC" class="img-fluid rounded">
+                <button class="btn btn-info" onclick="window.location.href='https://carlos00012.github.io/semaforo/';">Semaforo</button>
                 <br>
                 <a href="https://www.utc.edu.ec/" target="_blank" class="btn btn-light mt-3">UTC</a>
                 <p id="p1" class="mt-3">
                     El mundo académico es cambiante, evoluciona cada día. Es mucho más competitivo y exigente. 
                     En la Universidad Técnica de Cotopaxi nos distinguimos por la calidad de nuestros servicios, el profesionalismo de nuestra gente y la manera en que formamos estudiantes con conocimientos superlativos y competitivos.
-                    Hoy, consolidamos un compromiso en la forma de trabajar y de comportarnos; Creamos el valor que tú necesitas.
-                </p>
+                    Hoy, consolidamos un compromiso en la forma de trabajar y de comportarnos; Creamos el valor que tú necesitas. <br>
+                <button class = "btn btn-success" onclick="showMessage()">Aceptar</button> 
+                <button class=" btn btn-success" onclick="cambiarcontenido()">Cambiar Contenido</button><br> 
+                
+
                 <script>
                     function mouseDown() {
                         document.getElementById("p1").style.color = "yellow";
@@ -66,12 +72,37 @@
         </div>
     </main>
     
-    <footer class="text-center bg-secondary text-white py-3 mt-4">
-        <p>Todos los derechos reservados &copy; 2024</p>
-    </footer>
 
+    <div class="row">
+        <div class="col-md-4" id="color1">
+            <p>Div de prueba 1</p>
+        </div>
+        <div class="col-md-4" id="color2">
+            <p>Div de prueba 2</p>
+        </div>
+    </div>
+    <button class="btn btn-success" onclick="cambiarColor('color1','green'),cambiarColor('color2','white')">Cambiar Color 1</button> 
+    <button class="btn btn-danger" onclick="cambiarColor('color2','red'),cambiarColor('color1','white')">Cambiar Color 2</button>
+    
+
+    
+    <footer class="text-center bg-secondary text-white py-3 mt-4">
+        <p class="card-text">Todos los derechos reservados &copy; 2024</p>
+    </footer>
+    <script>
+        function showMessage(){
+            alert("Has precionado el boton UTC")
+        }
+        function cambiarcontenido(){
+            const texto = document.querySelector('.card-text') //sirve para atrapar elementos por su clase
+            texto.textContent = "Este es el nuevo contenido generado desde JS"
+        }
+        function cambiarColor(idElemento,color){
+            const d = document.getElementById(idElemento); //cambiamos el color con el id de cada uno
+            d.style.backgroundColor =color;
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
